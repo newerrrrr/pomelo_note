@@ -1,0 +1,73 @@
+
+一、安装
+1. 安装运行环境: gcc, g++ python2.7, nodejs
+	ubuntu 14.04.3 LTS默认自带有gcc和python2.7, 所以这两个可不装;
+	apt-get install g++
+	
+	查看版本: 
+	gcc -v 
+	g++ -v
+	python --version
+	
+2. 源码安装 pomelo 
+	1)先安装 git 
+		apt-get install git
+		
+	2)当前目录 /usr/local/
+		下载源码并安装:
+		git clone https://github.com/NetEase/pomelo.git
+		cd pomelo 
+		npm install -g
+		
+		可能安装不成功，则更换命令为:
+		npm install -g --unsafe-perm
+		
+	3)创建软链接
+		ln -s /usr/local/pomelo/bin/pomelo /usr/bin/pomelo
+		
+3. 安装成功, 查看 
+	pomelo --help 
+	
+
+二、创建测试项目
+	使用命令
+		$ pomelo init ./HelloWorld
+	或者
+		mkdir HelloWorld
+		chmod 777 HelloWorld
+		cd HelloWorld
+		pomelo init
+		
+	
+	接着选择其底层使用的通信协议, 选 [1]websocket
+		
+	
+	然后，进入到HelloWorld文件夹，安装依赖包
+	sh npm-install.sh	
+	
+	
+	
+	
+	
+	注意：如果是从网上下载项目,比如chatofpomelo-websocket, 那么需要修改 game_servers/package.json 
+	{
+		"name": "chatofpomelo",
+		"version": "0.0.1",
+		"private": false,
+		"dependencies": {
+			"pomelo": "1.2.0",  //这里需要修改为你当前所用的pomelo版本
+			"crc": "0.2.0"
+		}
+	}
+	然后在重新安装依赖包
+	sh npm-install.sh
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

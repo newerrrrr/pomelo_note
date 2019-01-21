@@ -1,0 +1,51 @@
+
+环境：Win7, python2.7
+
+1. 下载 libpomelo2 源码
+	https://github.com/NetEase/libpomelo2.git 
+	
+2. 下载 gyp , 用来构建 libpomelo2 的windows平台上的 VS 工程
+	http://git.chromium.org/external/gyp.git 
+	或者
+	https://github.com/lianliuwei/gyp.git 
+	
+	这里我把gyp 下载到 libpomelo2 目录下了
+	cmd 进入gyp目录, 执行命令 
+		setup.py install 
+	即可安装好gyp.
+	
+3. cmd 进入gyp目录， 执行命令
+
+	gyp.bat --depth=. ../pomelo.gyp -Duse_sys_openssl=false -Dlibrary=static_library -DTO=pc
+	
+	完成后可以在libpomelo目录里看到构建的几个项目工程了。
+	
+	注：文档中推荐的命令为  gyp.bat --depth=. ../pomelo.gyp -Dlibrary=static_library -DTO=pc， 即默认使用系统的openssl, 
+	
+	但使用该方法生成的项目文件在编译阶段会出现关于openssl的各种错误，即使你已经成功编译过openssl.
+	
+	为了避免这种错误，加了个选项：-Duse_sys_openssl=​false，即使用libpomelo自带的openssl
+
+
+4. 编译VS项目
+	这些工程以前都是用 VS2012版本创建的，所以用VS2013或更高版本打开 工程文件 pomelo.sln 时，提示要升级解决方案，选确定。
+	
+	开始编译...
+	
+	不出意外的话，会有以下错误提示（如果没有说明错误已经改正）：
+
+	error LNK1181: 无法打开输入文件 “advapi32. obj”
+		
+	这是由于项目tr_dummy、tr_tcp、tr_tls三个项目中的link设置有问题，依次打开项目属性->配置属性->链接器->输入->附加依赖项->编辑
+	
+	可以发现其中数个库​只有库名，漏了扩展名.lib，只要在这些名字后面加上".lib"就行了
+	
+	
+	
+	
+--Linux使用交叉编译工具编译android so库
+1) linux-core.c 文件头部的 #if #endif 等缩进一下，否则提示找不到部分信息
+2) ./android-configure /usr/local/ndk/android-ndk-r10e gyp
+
+	
+	
