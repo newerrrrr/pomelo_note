@@ -1,0 +1,9 @@
+
+1.安装好依赖环境：
+	node, python2.7.x, vc2017
+	
+2.下载源码:
+	git clone https://github.com/NetEase/pomelo.git
+	cd pomelo
+	npm install -g   //npm是 node 的包管理工具
+	

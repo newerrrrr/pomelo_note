@@ -1,4 +1,6 @@
 
+一、windows编译lib库
+
 环境：Win7, python2.7
 
 1. 下载 libpomelo2 源码
@@ -42,10 +44,41 @@
 	
 	
 	
+二、Ubuntu 使用交叉编译工具编译android so库
+	1.下载源码, 不能直接从windows拷贝到Ubuntu上，因为里面有几个 .sh文件，在windows的格式为dos格式。
+	  而linux只能执行格式为unix格式的脚本。所以会报错 /bin/bash^M: bad interpreter: No such file or directory
+		
+		git clone https://github.com/NetEase/libpomelo2.git 
+				
+	2. 设置权限
+		chmod -R 777 libpomelo2 
+		
+	3.根据文档 <ubuntu安装3_NDK.txt> 安装好NDK
 	
---Linux使用交叉编译工具编译android so库
-1) linux-core.c 文件头部的 #if #endif 等缩进一下，否则提示找不到部分信息
-2) ./android-configure /usr/local/ndk/android-ndk-r10e gyp
+	4.生成工具链目录:
+		./android-toolchain.sh /usr/local/ndk/android-ndk-r10e
+		或者
+		./android-toolchain.sh $NDK_HOME //NDK环境变量已在上一步骤中设置
+		
+		执行完后，会在libpomelo根目录生成android-toolcahin目录，里面有交叉编译所需的所有头文件，库文件和可执行文件。
+		
+	5.在执行./android-gen.sh之前，我们需要设置一些环境变量，android-toolchain.sh中的
+		export ANDROID_TOOLCHAIN_DIR=$PWD/android-toolchain这是在android-toolchain.sh执行结束实际上已经消失了，或者说没有起作用，
+		所以我们要手动设置.
+		
+		vim /etc/profile，在末尾增加
+		export ANDROID_TOOLCHAIN_DIR=/usr/local/games/libpomelo2/android-toolchain
+		export PATH=$ANDROID_TOOLCHAIN_DIR/bin:$PATH
+		保存退出.并使之生效:
+		source /etc/profile 
+		
+	6. 执行./android-gen.sh，然后会生成一个Makefile
+	
+	7.执行 make, 则会在out/Default/lib.target目录下生成libjpomelo.so
+	
+
+
+
 
 	
 	
