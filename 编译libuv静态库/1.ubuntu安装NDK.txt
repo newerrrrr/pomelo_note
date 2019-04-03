@@ -1,0 +1,30 @@
+
+1.先安装linux版本的ndk编译工具
+	1)通过wget工具下载bin包
+		确定下载保存位置，如 cd到 /usr/local/ndk， 因为下载下来的是bin包，所以可以直接移动到需要安装的目录下面
+		
+		wget -c http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
+		
+	2)执行解压
+		chmod a+x android-ndk-r10e-linux-x86_64.bin  #增加执行权限
+		./android-ndk-r10c-linux-x86_64.bin #执行bin文件
+		
+		即可解压到当前目录 android-ndk-r10e
+		
+		分配读写权限：chmod -R 777 android-ndk-r10e
+	
+	3)配置环境变量
+		$ sudo vim /etc/profile，在文件末尾加入如下内容：
+		export NDK_HOME=/usr/local/ndk/android-ndk-r10e
+		export PATH=$NDK_HOME:$PATH
+		
+		保存并退出; 并执行命令使之生效：
+			source /etc/profile
+	
+	4)至此 android NDK 安装配置完毕, 通过如下命令测试
+		echo $NDK_HOME
+		ndk-build -v 
+			
+	
+	
+		

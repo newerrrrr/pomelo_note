@@ -1,0 +1,10 @@
+
+要求系统装好 python 2.7x 和 vs2017
+
+1. gyp 其实是一个python写的脚本，并不需要安装，只需要下载下来放在需要编译的库目录下即可：
+	将 gyp 解压缩到 libuv-1.18.0/build/gyp 
+
+2. cmd 里执行 vcbuild.bat ， 即可生成vs项目文件 uv.sln
+
+3. 用vs2017打开 uv.sln ，编译，即在libuv-1.x\Debug\lib下生成 libuv.lib
+
