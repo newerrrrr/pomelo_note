@@ -9,7 +9,14 @@
 	g++ -v
 	python --version
 	
-2. 源码安装 pomelo 
+	注：nodejs安装很关键, 需要将Ubuntu系统自带低版本给卸载掉再安装; apt-get remove nodejs , 再安装比较新的版本 > V10
+	曾经一直安装不成功, 提示nodejs版本低, 就是因为nodej没有使用高版本的。
+	
+2.务必确保虚拟机能上网,能正常打开网页, 否则在下面步骤中使用 npm 安装时无法下载数据, 提示 “npm ERR! network getaddrinfo ENOTFOUND”
+  
+  (如果设置静态IP后有可能无法上网哦，可以先取消静态IP) 
+  
+3. 源码安装 pomelo 
 	1)先安装 git 
 		apt-get install git
 		
@@ -63,8 +70,7 @@
 	sh npm-install.sh
 	
 	
-	
-	
+
 	
 	
 	
