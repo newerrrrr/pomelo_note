@@ -30,7 +30,7 @@
 		npm install -g --unsafe-perm
 		
 	3)创建软链接
-		ln -s /usr/local/pomelo/bin/pomelo /usr/bin/pomelo
+		ln -s /usr/local/pomelo/bin/pomelo /usr/local/bin/
 		
 3. 安装成功, 查看 
 	pomelo --help 
