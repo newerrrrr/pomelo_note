@@ -62,7 +62,7 @@
 		
 		执行完后，会在libpomelo根目录生成android-toolcahin目录，里面有交叉编译所需的所有头文件，库文件和可执行文件。
 		
-	5.在执行./android-gen.sh之前，我们需要设置一些环境变量，android-toolchain.sh中的
+	5.(此步骤暂时忽略，先执行步骤6，如果出错在回到步骤5)在执行./android-gen.sh之前，我们需要设置一些环境变量，android-toolchain.sh中的
 		export ANDROID_TOOLCHAIN_DIR=$PWD/android-toolchain这是在android-toolchain.sh执行结束实际上已经消失了，或者说没有起作用，
 		所以我们要手动设置.
 		
