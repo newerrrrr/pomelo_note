@@ -62,7 +62,7 @@
 		"version": "0.0.1",
 		"private": false,
 		"dependencies": {
-			"pomelo": "1.2.0",  //这里需要修改为你当前所用的pomelo版本
+			"pomelo": "1.2.0",  //这里需要修改为你当前所用的pomelo版本,比如 2.2.5
 			"crc": "0.2.0"
 		}
 	}
