@@ -105,14 +105,20 @@
     "project-settings": {
       "x": 420,
       "y": 10,
-      "width": 603,
-      "height": 567
+      "width": 604,
+      "height": 568
     },
     "preferences": {
       "x": 336,
       "y": 6,
       "width": 602,
       "height": 566
+    },
+    "sprite-editor": {
+      "x": 380,
+      "y": 38,
+      "width": 516,
+      "height": 538
     }
   }
 }

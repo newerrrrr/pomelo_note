@@ -309,19 +309,74 @@
     "meta": 1561203775325,
     "relativePath": "script\\public\\net\\pomelo-creator-client.js"
   },
-  "9e71fae7-6631-4230-ac4f-cccbbb201a21": {
-    "asset": 1553953171050,
-    "meta": 1559981373704,
-    "relativePath": "texture\\img_logo.png"
-  },
   "3e6bac80-a251-4dab-95fc-70704381151c": {
-    "asset": 1559982758552,
-    "meta": 1559982758576,
+    "asset": 1561210127099,
+    "meta": 1561210127118,
     "relativePath": "scene\\Logo.fire"
   },
-  "70fe4177-a61b-49f6-a37f-0b983bb59d66": {
-    "asset": 1559984106196,
-    "meta": 1559984108578,
-    "relativePath": "script\\Logo.js"
+  "814d29e0-5280-49d7-b5e1-bd26a6db7bdf": {
+    "asset": 1561212761063,
+    "meta": 1561212761084,
+    "relativePath": "scene\\Login.fire"
+  },
+  "ff95d826-7efa-4e4d-b1be-a64098281a76": {
+    "asset": 1561208253329,
+    "meta": 1561208253316,
+    "relativePath": "texture\\login"
+  },
+  "5e2afbe1-2da7-4efb-a0a8-2f2e467e1a65": {
+    "asset": 1553326637528,
+    "meta": 1561208253444,
+    "relativePath": "texture\\login\\btn_login_tel.png"
+  },
+  "f9cf4887-ba73-42f6-8738-a0b922a4f3b7": {
+    "asset": 1553326637528,
+    "meta": 1561208253460,
+    "relativePath": "texture\\login\\btn_login_guest.png"
+  },
+  "9fb34325-705c-4b44-a7da-f987226613ae": {
+    "asset": 1561208253347,
+    "meta": 1561208253345,
+    "relativePath": "texture\\logo"
+  },
+  "804d148b-1ebf-4854-b9d3-ecc13db8e93e": {
+    "asset": 1553326637528,
+    "meta": 1561208253521,
+    "relativePath": "texture\\login\\btn_login_wx.png"
+  },
+  "19f9d6d0-9913-4e44-a289-a00ea6bb7252": {
+    "asset": 1553953171050,
+    "meta": 1561208253574,
+    "relativePath": "texture\\logo\\img_logo.png"
+  },
+  "84999d8f-9668-4400-b805-adfd01e5ed5f": {
+    "asset": 1561209856476,
+    "meta": 1561209856464,
+    "relativePath": "script\\scene"
+  },
+  "570d03d7-22d4-4c1a-a4eb-29c18e7eb745": {
+    "asset": 1553326637528,
+    "meta": 1561210260739,
+    "relativePath": "texture\\login\\login_bg.png"
+  },
+  "a044fed4-2245-4b0f-95bc-df553f79ba91": {
+    "asset": 1553326637294,
+    "meta": 1561211832657,
+    "relativePath": "texture\\login\\text_bg.png"
+  },
+  "ec9f6423-1db5-4b09-8c00-c3998321989d": {
+    "asset": 1561212105821,
+    "meta": 1561212105819,
+    "relativePath": "resources\\font"
+  },
+  "3d71683c-91ca-4057-83ba-28d54bdd77d3": {
+    "asset": 1553326636872,
+    "meta": 1561212105890,
+    "relativePath": "resources\\font\\FZHTJW.TTF"
+  },
+  "c036fdef-5f35-43eb-a491-c27424ca9c91": {
+    "asset": 1561213292332,
+    "meta": 1561213296383,
+    "relativePath": "script\\scene\\Logo.js"
   }
 }

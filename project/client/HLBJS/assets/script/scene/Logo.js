@@ -1,9 +1,3 @@
-"use strict";
-cc._RF.push(module, '70fe4F3phtJ9qN/C5g7tZ1m', 'Logo');
-// script/Logo.js
-
-"use strict";
-
 // Learn cc.Class:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
@@ -37,18 +31,18 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
 
-    start: function start() {
+
+    start () {
 
         pomelo.init({
-            host: "192.168.159.128",
-            port: 3014
+            host : "192.168.159.128",
+            port : 3014,
         }, function () {
             var route = 'gate.gateHandler.queryEntry';
             pomelo.request(route, {
-                username: "huanglibo",
-                rid: 1234
+                username:"huanglibo",
+                rid:1234,
             }, function (data) {
                 console.log("data======================");
                 // pomelo.disconnect(function () {
@@ -60,12 +54,17 @@ cc.Class({
                 //     }, function () {
                 //     })
                 // });
-            });
+            })
+            
         });
-    }
-}
 
-// update (dt) {},
-);
+    },
 
-cc._RF.pop();
+    onLoad () {
+        cc.director.loadScene('Login', function(){
+            cc.log("======================dfdff login")
+        });
+    },
+
+    // update (dt) {},
+});
