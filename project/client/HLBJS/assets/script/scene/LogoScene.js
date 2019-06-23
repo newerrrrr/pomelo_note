@@ -61,7 +61,7 @@ cc.Class({
     },
 
     onLoad () {
-        cc.director.loadScene('Login', function(){
+        cc.director.loadScene('LoginScene', function(){
             cc.log("======================dfdff login")
         });
     },
