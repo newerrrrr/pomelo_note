@@ -20,7 +20,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        require('initGame');
+    },
 
     start () {
         
@@ -38,6 +40,8 @@ cc.Class({
 
     onBtnLoginGuest:function(){
         cc.log("===== onBtnLoginGuest, name =", this.editbox.string);
+        
+        cc.log("=============gameid, zzmj=", gt.GameID.ZZMJ, gt.EventType.ZZMJ, gt.MSGID.LOGIN)
     },
 
 });
