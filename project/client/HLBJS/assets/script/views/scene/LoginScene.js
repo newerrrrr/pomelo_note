@@ -40,8 +40,49 @@ cc.Class({
 
     onBtnLoginGuest:function(){
         cc.log("===== onBtnLoginGuest, name =", this.editbox.string);
-        
-        cc.log("=============gameid, zzmj=", gt.GameID.ZZMJ, gt.EventType.ZZMJ, gt.MSGID.LOGIN)
+        cc.log("=============gameid, zzmj=", gt.GameID.ZZMJ, gt.EventType.ZZMJ, gt.MSGID.LOGIN);
+        cc.log("=================gate:", gt.gateServer.ip, gt.gateServer.port);
+
+        pomelo.init({
+            host : gt.gateServer.ip,
+            port : gt.gateServer.port,
+        }, function () {
+            var route = 'gate.gateHandler.queryEntry';
+            pomelo.request(route, {
+                username:"huanglibo",
+                uid:1234,
+            }, function (data) {
+                console.log("data======================", data.host, data.port);
+                if ('undefined' != data || null != data) {
+                    pomelo.disconnect(function () {
+                        pomelo.init({
+                            host : data.host,
+                            port : data.port,
+                            reconnect : true
+                        }, function (para) {
+                            console.log("para======================", para);
+                        });
+                    });                    
+                }
+            })            
+        });
     },
+
+    // loginGateServer:function(host, port, callback) {
+    //     pomelo.init({
+    //         host : host,
+    //         port : port,
+    //     }, function (){
+    //         var route = 'gate.gateHandler.queryEntry';
+    //         pomelo.request(route, {
+    //             uid:1234,
+    //         }, function(ret) {
+
+    //         }            
+
+    //     });        
+    // }
+
+
 
 });
