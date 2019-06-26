@@ -15,6 +15,7 @@ cc.Class({
         btnWX:cc.Button,
         btnTel:cc.Button,
         btnGuest:cc.Button,
+        editbox:cc.EditBox,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -22,7 +23,7 @@ cc.Class({
     // onLoad () {},
 
     start () {
-
+        
     },
 
     // update (dt) {},
@@ -36,7 +37,7 @@ cc.Class({
     },
 
     onBtnLoginGuest:function(){
-        cc.log("===== onBtnLoginGuest");
+        cc.log("===== onBtnLoginGuest, name =", this.editbox.string);
     },
 
 });

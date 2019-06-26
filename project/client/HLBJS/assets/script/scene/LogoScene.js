@@ -35,28 +35,28 @@ cc.Class({
 
     start () {
 
-        pomelo.init({
-            host : "192.168.159.128",
-            port : 3014,
-        }, function () {
-            var route = 'gate.gateHandler.queryEntry';
-            pomelo.request(route, {
-                username:"huanglibo",
-                rid:1234,
-            }, function (data) {
-                console.log("data======================");
-                // pomelo.disconnect(function () {
-                //     pomelo.init({
-                //         host : host2,
-                //         host : host2,
-                //         port : port2,
-                //         reconnect : true
-                //     }, function () {
-                //     })
-                // });
-            })
+        // pomelo.init({
+        //     host : "192.168.159.128",
+        //     port : 3014,
+        // }, function () {
+        //     var route = 'gate.gateHandler.queryEntry';
+        //     pomelo.request(route, {
+        //         username:"huanglibo",
+        //         rid:1234,
+        //     }, function (data) {
+        //         console.log("data======================");
+        //         // pomelo.disconnect(function () {
+        //         //     pomelo.init({
+        //         //         host : host2,
+        //         //         host : host2,
+        //         //         port : port2,
+        //         //         reconnect : true
+        //         //     }, function () {
+        //         //     })
+        //         // });
+        //     })
             
-        });
+        // });
 
     },
 
