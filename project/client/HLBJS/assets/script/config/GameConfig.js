@@ -20,4 +20,5 @@ module.exports.init = function(globalVar){
     //游客登陆
     gt.open_guest = true;
     
+    gt.designSize = cc.size(1334, 750); 
 };

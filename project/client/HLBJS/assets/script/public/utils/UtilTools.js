@@ -351,12 +351,91 @@ gt.convertNumToShort = function(num, radix, decimal, costomunitArr) {
 }
 
 
+//截屏(此功能不可行, RenderTexture部分函数废弃。请参考creator官方测试例子 assets\cases\07_capture_texture)
+//fileName: **.png
+//node: 截屏的节点
+//endCall: 截屏完成的回调会传出目标文件路径
+//cpSize: 截屏大小：如果不是截全屏大小。
+//bHide:有些节点需要隐藏截图后，就只在截图瞬间显示
+gt.captureScreen = function(fileName, node, endCall, cpSize, bHide) { 
+    if(CC_JSB){
+        var doCapSize = cpSize || gt.designSize;
+        var oldPos = node.position;
+        
+        if(bHide){
+            node.active = true;
+        }
+        
+        var rt = new cc.RenderTexture(doCapSize.width, doCapSize.height);
+        // rt.setVisible(false);
+        node.position = cc.v2(doCapSize.width/2, doCapSize.height/2); //要加这句，不然会偏移坐标
+        rt.begin();
+        node.visit();
+        rt.end();
 
+        if(bHide){
+            node.active = false;
+        }
+        node.position = oldPos; 
 
+        rt.saveToFile(fileName, cc.ImageFormat.PNG, true, function(){            
+            if(endCall){ 
+                var targetPath = jsb.fileUtils.getWritablePath() + fileName; 
+                cc.log('============filepath:', targetPath);             
+                endCall(targetPath);
+            }
+        });
+    }
+},
 
+//WX链接分享
+//linkUrl:点击跳转的url
+//title:分享标题
+//content:分享内容
+//toScene:分享场景 Global.WX_SHARE_SCENE
+//shareResultCall:分享结果回调
+gt.WXShareLink = function(linkUrl, title, content, toScene, shareResultCall){
+    var iconUrl = gt.webShareIcon;
+    if(toScene >= 0 && linkUrl && title && content){
+        gt.WxMgr.wxShareWeb(toScene, title, content, iconUrl, linkUrl, shareResultCall);
+    }
+}
 
+//WX图片分享
+//imgPath 图片地址
+//toScene: 分享场景
+gt.WXShareImage = function(imgPath, toScene, shareResultCall){
+    if(toScene >= 0 && imgPath){
+        gt.WxMgr.wxShareImg(toScene, imgPath, shareResultCall);
+    }
+}
 
+//是否开启wss 
+//即当是https的时候，websocket也需要用wss
+gt.isUserWSS = function(){
+    var res = false
+    if(gt.loginServerAddress.indexOf(':') === -1 && cc.sys.isBrowser){
+        res = true
+    }
+    return res
+}
 
+// 按钮点击事件
+gt.btnClickEvent = function(btn, func, obj, sound) {
+    if(btn == null) {
+        return null;
+    }
+    btn.on("click", func, obj);
+    btn.on("touchstart", function() {
+        if(sound == null){
+            cc.vv.AudioManager.playEff("common/","btn_click",true);
+        }
+        else if(sound.length > 0 ){
+            // Global.playEff(sound);
+        }
+    });
+    return btn;
+}
 
 //自动适配设备
 gt.autoAdaptDevices = function () { 
@@ -378,7 +457,7 @@ gt.autoAdaptDevices = function () {
 
     //适配iPhoneX的刘海
     gt.setAdaptIphoneX();
-};
+}
 
 // 适配iphoneX
 gt.setAdaptIphoneX = function(nodeName) {
@@ -413,7 +492,181 @@ gt.setAdaptIphoneX = function(nodeName) {
     else {
         func();
     }
-};
+}
+
+/*
+** 检测IP跟GPS
+** playersList参数结构:[{uid:*, ip:*, lat:* lng:*},...]
+** toPlayer参数结构：{uid:*, ip:*, lat:*, lng:*} 说明：相对玩家，缺省情况下，会两两相互之间比较
+*/
+gt.checkIpAndGps = function(playersList, toPlayer) {
+    //是否开启GPS
+    var isOpenGPS = function(player) {
+        return !(player.lat === 0 && player.lng === 0);
+    };
+
+    //IP相同
+    var isSameIp = function(player1, player2) {
+        return (player1.ip.split(':')[0] == player2.ip.split(':')[0]);
+    };
+
+    var isNearlyDistance = function(player1, player2) {
+        if (!isOpenGPS(player1)) return false;
+        if (!isOpenGPS(player2)) return false;
+        return gt.getDistanceOfTwoPoint(player1.lat, player1.lng, player2.lat, player2.lng) <= 0.2;
+    }
+
+    if (!toPlayer) {
+        //先检测是否IP相同
+        for (var i=0; i < playersList.length - 1; i++) {
+            if (!playersList[i]) continue;
+            for (var j=i+1; j < playersList.length; j++) {
+                if (!playersList[j]) continue;
+                if (isSameIp(playersList[i], playersList[j])) return true;
+            }
+        }
+
+        //再检测GPS是否过近
+        for (var i=0; i < playersList.length - 1; i++) {
+            if (!playersList[i]) continue;
+            for (var j=i+1; j < playersList.length; j++) {
+                if (!playersList[j]) continue;
+                if (isNearlyDistance(playersList[i], playersList[j])) return true;
+            }
+        }
+    }
+    else {
+        //先检测是否IP相同
+        for (var i=0; i < playersList.length; i++) {
+            if (!playersList[i]) continue;
+            if (playersList[i].uid == toPlayer.uid) continue;
+            if (isSameIp(playersList[i], toPlayer)) return true;
+        }
+
+        //再检测GPS是否过近
+        for (var i=0; i < playersList.length; i++) {
+            if (!playersList[i]) continue;
+            if (playersList[i].uid == toPlayer.uid) continue;
+            if (isNearlyDistance(playersList[i], toPlayer)) return true;
+        }
+    }
+    return false;
+}
+
+// 弹出动画显示
+gt.showAlertAction = function(node, isShow, startScale, endScale, callback) {
+    let start_Scale = startScale;
+    let end_Scale = endScale;
+
+    if(isShow) {
+        if(start_Scale == null){
+            node.scale = 0;
+        }
+        else {
+            node.scale = start_Scale;
+        }
+
+        if(end_Scale == null){
+            end_Scale = 1;
+        }
+    }
+    else {
+        if(start_Scale == null){
+            node.scale = 1;
+        }
+
+        if(end_Scale == null){
+            end_Scale = 0;
+        }
+    }
+
+    let action = cc.scaleTo(0.2,end_Scale);
+    if(isShow) {
+        action.easing(cc.easeBackOut());
+    }
+    else{
+        action.easing(cc.easeSineIn());
+    }
+
+    node.runAction(cc.sequence(action, cc.callFunc(function() {
+        if(callback){
+            callback();
+        }
+    })))
+}
+
+//创建一个新节点带帧动画
+//atlas资源所在的图集
+//preSufix资源的前缀
+//nNum帧动画张数
+//speed播放速度
+//bLoop是否循环
+//endCall播完结束的回调
+//strConn前缀和数字之间的连接字符可空
+//beginDif:开始图片的起始下标，默认1开始
+//return: 返回的节点需要自己删除
+gt.createrSpriteAni = function(atlas, preSufix, nNum, speed, bLoop, endCall, strConn, beginDif) {
+    var self = this
+    //创建一个空节点
+    var newNode = new cc.Node('node_eff');
+    var sp = newNode.addComponent(cc.Sprite);
+    self.addSpriteAni(newNode,atlas,preSufix,nNum,speed,bLoop,endCall,strConn,beginDif);
+    
+    return newNode;
+}
+
+//给节点添加帧动画组件
+gt.addSpriteAni = function(newNode, atlas, preSufix, nNum, speed, bLoop, endCall, strConn, beginDif) {
+    var self = this;
+    if(!beginDif) beginDif = 1;
+    // 是否需要补零
+    var getZeroize = function(num,isZeroize) {
+        if(isZeroize) {
+            let str = num<10?("0"+num):num;
+            return str;
+        }
+        else{
+            return num;
+        }
+    }
+
+    var lists = [];
+    for(var i = 0;i < nNum; i++){
+        var key = preSufix + getZeroize(i+beginDif,true);
+        if(strConn){
+            key = preSufix + strConn + getZeroize(i+beginDif,true);
+        }
+        
+        if(atlas._spriteFrames[key]){
+            lists.push(atlas._spriteFrames[key]);
+        }
+    }
+    
+    var ani = newNode.addComponent(cc.Animation);
+    var clip = cc.AnimationClip.createWithSpriteFrames(lists,30);
+    if(bLoop){
+        clip.wrapMode = cc.WrapMode.Loop;
+    }
+    
+    clip.speed = speed;
+    ani.addClip(clip,preSufix);
+    var finishCall = function(){
+        if(endCall){
+           endCall();
+        }
+    }
+    ani.on('finished',finishCall);
+    ani.play(preSufix);
+}
+
+//空对象判断
+gt.isEmptyObject = function(obj) {   
+    for (var key in obj){
+    　　return false;
+    }　　
+    return true;
+}
+
 
 
 }; //init

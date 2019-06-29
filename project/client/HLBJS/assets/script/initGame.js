@@ -7,6 +7,8 @@
 	require('config/EventType').init(gt);
 	require('config/MsgConfig').init(gt);
 	require('public/UtilTools').init(gt);
-	require('public/DeviceApi').init(gt);
+
+	gt.deviceApi = require('public/DeviceApi'); 
+	gt.wxMgr     = require('public/WxMgr'); 
 	
 })();
