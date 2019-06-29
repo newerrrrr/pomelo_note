@@ -6,5 +6,7 @@
 	require('config/GameConfig').init(gt);
 	require('config/EventType').init(gt);
 	require('config/MsgConfig').init(gt);
+	require('public/UtilTools').init(gt);
+	require('public/DeviceApi').init(gt);
 	
 })();

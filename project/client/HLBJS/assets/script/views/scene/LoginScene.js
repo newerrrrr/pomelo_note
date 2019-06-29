@@ -21,12 +21,14 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        require('initGame');
+        require('InitGame'); //初始化游戏配置
+
+        gt.autoAdaptDevices();
     },
 
     start () {
-        
     },
+
 
     // update (dt) {},
 
@@ -36,6 +38,11 @@ cc.Class({
 
     onBtnLoginTel:function(){
         cc.log("===== onBtnLoginTel");
+        // let obj = {a:'kkdd', b:'isdf'};
+
+        var StrTools = require('public/utils/StrTools');
+        var str = StrTools.getShortString("我爱中国", 2);
+        cc.log('-====== new str =', str);
     },
 
     onBtnLoginGuest:function(){
@@ -59,30 +66,15 @@ cc.Class({
                             host : data.host,
                             port : data.port,
                             reconnect : true
-                        }, function (para) {
-                            console.log("para======================", para);
+                        }, function () {                            
+                            var route = 'login.loginHandler.login';
+                            pomelo.request(route, {}, function(para) {
+                                console.log("para======================", para.msg);
+                            });
                         });
                     });                    
                 }
-            })            
+            })  
         });
     },
-
-    // loginGateServer:function(host, port, callback) {
-    //     pomelo.init({
-    //         host : host,
-    //         port : port,
-    //     }, function (){
-    //         var route = 'gate.gateHandler.queryEntry';
-    //         pomelo.request(route, {
-    //             uid:1234,
-    //         }, function(ret) {
-
-    //         }            
-
-    //     });        
-    // }
-
-
-
 });
