@@ -8,5 +8,7 @@
 	require('config/MsgConfig').init(gt);
 	require('public/UtilTools').init(gt);
 	require('public/DeviceApi').init(gt);
+
+	gt.tcp = require('public/net/NetTcp').init();
 	
 })();

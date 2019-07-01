@@ -1320,6 +1320,7 @@ cc.Pomelo = function() {
       var obj = Package.encode(Package.TYPE_HANDSHAKE, Protocol.strencode(JSON.stringify(handshakeBuffer)));
       send(obj);
     };
+    
     var onmessage = function(event) {
       processPackage(Package.decode(event.data), cb);
       // new package arrived, update the heartbeat timeout
@@ -1327,10 +1328,12 @@ cc.Pomelo = function() {
         nextHeartbeatTimeout = Date.now() + heartbeatTimeout;
       }
     };
+
     var onerror = function(event) {
       pomelo.emit('io-error', event);
       console.error('socket error: ', event);
     };
+
     var onclose = function(event) {
       pomelo.emit('close',event);
       pomelo.emit('disconnect', event);
@@ -1347,6 +1350,7 @@ cc.Pomelo = function() {
       disconnectCb && disconnectCb();
       disconnectCb = null;
     };
+
     socket = new WebSocket(url);
     socket.binaryType = 'arraybuffer';
     socket.onopen = onopen;

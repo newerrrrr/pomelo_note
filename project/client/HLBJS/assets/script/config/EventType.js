@@ -1,6 +1,6 @@
 //事件定义
-module.exports.init = function(globalVar){ 
-    globalVar.EventType = {
+module.exports.init = function(gt){ 
+    gt.EventType = {
     	ZZMJ:'ZZMJ',
     	NZMJ:'NZMJ',
     	PDK:'PDK',
