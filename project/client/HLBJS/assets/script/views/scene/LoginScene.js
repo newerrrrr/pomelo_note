@@ -40,9 +40,9 @@ cc.Class({
         cc.log("===== onBtnLoginTel");
         // let obj = {a:'kkdd', b:'isdf'};
 
-        var StrTools = require('public/utils/StrTools');
-        var str = StrTools.getShortString("我爱中国", 2);
-        cc.log('-====== new str =', str);
+        gt.captureScreen('hlb.png', this, null, null, false);
+
+        
     },
 
     onBtnLoginGuest:function(){
