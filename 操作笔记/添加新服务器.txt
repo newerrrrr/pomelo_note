@@ -1,0 +1,28 @@
+
+
+1. 在 game_server/config/servers.js 中添加新的服务器，比如
+    "login":[
+       {"id":"login-server-1", "host":"127.0.0.1", "port":6050},
+       {"id":"login-server-2", "host":"127.0.0.1", "port":6051},
+       {"id":"login-server-3", "host":"127.0.0.1", "port":6052}
+    ]
+	
+	注意:
+		1)josn文件格式，数组最后一个元素后不带逗号，成员之间不带空行，否则编译不通过。
+		
+		2)端口号随意，只要合法，且不要占用系统端口即可。
+	
+2. game-server/app/servers/添加目录 login/handler，或者login/remote ，编写对应的 handler脚本；
+
+3. 修改 game_server/config/adminServer.js ，添加 login 服的密钥：
+	[{
+		"type": "connector",
+		"token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
+	},{
+		"type": "login",
+		"token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
+	},{
+		"type": "gate",
+		"token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
+	}
+	]

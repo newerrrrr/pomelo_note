@@ -1,0 +1,4 @@
+
+1.在实现具体的Handler的时候，最后需要调用next，其中next的签名为 next(err, resp).
+如果没有出现错误，那么err为空即可；如果不是request请求，而是notify的话，则一样需要调用next，
+此时resp参数是不需要的，一般情况下，如果没有错误的话，就直接使用next(null)即可
