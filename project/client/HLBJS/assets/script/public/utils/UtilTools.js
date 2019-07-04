@@ -667,6 +667,21 @@ gt.isEmptyObject = function(obj) {
     return true;
 }
 
+// 按钮点击事件
+gt.addClickEvent = function(btn, callback, context, noSound) {
+    if(btn == null) {
+        return null;
+    }
+
+    btn.on("click", function(){
+        if (!noSound) {
+            //todo 
+        }
+        callback && callback();
+
+    }, context);
+}
+
 
 
 }; //init

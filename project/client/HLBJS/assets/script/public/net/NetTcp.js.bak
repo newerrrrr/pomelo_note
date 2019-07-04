@@ -1,0 +1,109 @@
+(function(){
+
+//网络管理器. 基于 pomelo 封装的 websocket 
+var NetTcp = function() {
+
+    var connectTimeout   = 8000; //by hlb 
+    var connectTimeoutId = null;
+
+    this.handlers = {};
+
+    this.registerMsg = function(msgId, target, callback){
+        if (msgId == null || msgId == 'undefined') {
+            cc.log(' invalid msgId ');
+        };
+
+        this.handlers[msgId] = this.handlers[msgId] || [];
+        let items = this.handlers[msgId];
+        //如果已注册则返回 
+        for (let i = 0, len = items.length; i < len; i++) { 
+            if (items[i].obj == target && items[i].func == callback) { 
+                return;
+            }
+        }
+        items.push({obj:target, func:callback}); 
+    };
+
+    this.unregisterMsg = function(msgId, target){ 
+        let items = this.handlers[msgId];
+
+        if (items == 'undefined') return;
+        for (let i = 0, len = items.length; i < len; i++) { 
+            if (items[i].obj == target) { 
+                items.splice(i, 1);
+                break;
+            } 
+        } 
+    };
+
+    //清楚该对象所有关联信息
+    this.unregisterAllMsg = function(target) {
+        for (let key in this.handlers) { 
+            let items = this.handlers[key];
+            for (let i = items.length-1; i >= 0; i--){
+                if (items[i].obj == target) {
+                    items.splice(i, 1);
+                }
+            }
+        }
+    };
+
+    this.params = {};
+    this.connectCallback = null;
+    this.isConnected = false;
+
+    //params = {host:this.host, port:this.port, reconnect:true/false, ...};
+    this.connect = function(params, connectCallback){
+        // this.params = params;
+        // this.connectCallback = connectCallback;
+
+        // //开启连接超时定时器
+        // this.startConnectTimer(connectCallback);
+
+        // //开始连接 
+        // this.disconnect(function(){            
+        //     pomelo.init(this.params, function() { 
+        //         //连接成功
+        //         this.isConnected = true; 
+        //         connectCallback && connectCallback(true); 
+        //     });
+        // });
+    };
+
+    this.disconnect = function(cb){
+        this.isConnected = false; 
+        pomelo.disconnect(function(){             
+            cb && cb();
+        });
+    };
+
+    this.reconnect = function() { 
+        this.params.reconnect = true; 
+        this.connect(this.params); 
+    };
+
+    this.sendMessage = function(data) {
+
+    };
+
+
+    this.startConnectTimer = function(cb) { 
+        this.stopConnectTimer() 
+        connectTimeoutId = setTimeout(function(){ 
+            cc.log('xxxxxx disconnect ...');
+            this.disconnect();
+            cb && cb(false);
+        }, connectTimeout);
+    };
+
+    this.stopConnectTimer = function() { 
+        if(connectTimeoutId) { 
+            clearTimeout(connectTimeoutId);
+            connectTimeoutId = null;
+        } 
+    };
+} 
+
+return new NetTcp(); 
+})();
+

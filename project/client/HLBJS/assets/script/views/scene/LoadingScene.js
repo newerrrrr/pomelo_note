@@ -31,42 +31,18 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
+    onLoad () {
+        require('InitGame');
 
+        //延时1秒进入登陆界面
+        this.scheduleOnce(function(){
+            cc.director.loadScene('LoginScene'); 
+        }, 0.5);
+    },
 
     start () {
 
-        // pomelo.init({
-        //     host : "192.168.159.128",
-        //     port : 3014,
-        // }, function () {
-        //     var route = 'gate.gateHandler.queryEntry';
-        //     pomelo.request(route, {
-        //         username:"huanglibo",
-        //         rid:1234,
-        //     }, function (data) {
-        //         console.log("data======================");
-        //         // pomelo.disconnect(function () {
-        //         //     pomelo.init({
-        //         //         host : host2,
-        //         //         host : host2,
-        //         //         port : port2,
-        //         //         reconnect : true
-        //         //     }, function () {
-        //         //     })
-        //         // });
-        //     })
-            
-        // });
-
     },
-
-    onLoad () { 
-        //进入自动更新界面
-        
-        this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.fadeOut(0.8), cc.callFunc(function(){
-            cc.director.loadScene('LoginScene'); 
-        })));
-    }, 
 
     // update (dt) {},
 });

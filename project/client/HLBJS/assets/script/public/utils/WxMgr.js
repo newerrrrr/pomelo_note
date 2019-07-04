@@ -1,6 +1,6 @@
 var WxMgr = {};
 
-var DeviceApi = require('public/DeviceApi'); 
+var DeviceApi = require('public/utils/DeviceApi'); 
 
 //是否安装微信
 WxMgr.isWXAppInstalled = function(){

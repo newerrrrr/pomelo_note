@@ -127,7 +127,7 @@
 
   Emitter.prototype.emit = function(event){
     this._callbacks = this._callbacks || {};
-    var args = [].slice.call(arguments, 1)
+    var args = [].slice.call(arguments, 1) //将 arguments 中的函数参数转化为标准数组 
       , callbacks = this._callbacks[event];
 
     if (callbacks) {
@@ -174,30 +174,30 @@
 (function (exports, ByteArray, global) {
   var Protocol = exports;
 
-  var PKG_HEAD_BYTES = 4;
-  var MSG_FLAG_BYTES = 1;
-  var MSG_ROUTE_CODE_BYTES = 2;
-  var MSG_ID_MAX_BYTES = 5;
-  var MSG_ROUTE_LEN_BYTES = 1;
-
-  var MSG_ROUTE_CODE_MAX = 0xffff;
-
+  var PKG_HEAD_BYTES          = 4;
+  var MSG_FLAG_BYTES          = 1;
+  var MSG_ROUTE_CODE_BYTES    = 2;
+  var MSG_ID_MAX_BYTES        = 5;
+  var MSG_ROUTE_LEN_BYTES     = 1;
+  
+  var MSG_ROUTE_CODE_MAX      = 0xffff;
+  
   var MSG_COMPRESS_ROUTE_MASK = 0x1;
-  var MSG_TYPE_MASK = 0x7;
+  var MSG_TYPE_MASK           = 0x7;
 
   var Package = Protocol.Package = {};
   var Message = Protocol.Message = {};
 
-  Package.TYPE_HANDSHAKE = 1;
+  Package.TYPE_HANDSHAKE     = 1;
   Package.TYPE_HANDSHAKE_ACK = 2;
-  Package.TYPE_HEARTBEAT = 3;
-  Package.TYPE_DATA = 4;
-  Package.TYPE_KICK = 5;
+  Package.TYPE_HEARTBEAT     = 3;
+  Package.TYPE_DATA          = 4;
+  Package.TYPE_KICK          = 5;
 
-  Message.TYPE_REQUEST = 0;
-  Message.TYPE_NOTIFY = 1;
+  Message.TYPE_REQUEST  = 0;
+  Message.TYPE_NOTIFY   = 1;
   Message.TYPE_RESPONSE = 2;
-  Message.TYPE_PUSH = 3;
+  Message.TYPE_PUSH     = 3;
 
   /**
    * pomele client encode
@@ -266,11 +266,11 @@
    *
    * Head: 4bytes
    *   0: package type,
-   *      1 - handshake,
-   *      2 - handshake ack,
-   *      3 - heartbeat,
-   *      4 - data
-   *      5 - kick
+   *      bit[1] - handshake,
+   *      bit[2] - handshake ack,
+   *      bit[3] - heartbeat,
+   *      bit[4] - data
+   *      bit[5] - kick
    *   1 - 3: big-endian body length
    * Body: body length bytes
    *
@@ -1177,36 +1177,38 @@ cc.Pomelo = function() {
 
   var root = window;
   var pomelo = Object.create(EventEmitter.prototype); // object extend from object
+  
   // root.pomelo = pomelo;
-  var socket = null;
-  var reqId = 0;
-  var callbacks = {};
-  var handlers = {};
+  var socket    = null;
+  var reqId     = 0;
+  var callbacks = {}; //请求的回调, 在 pomelo.request() 中赋值.
+  var handlers  = {};
+
   //Map from request id to route
-  var routeMap = {};
-  var dict = {};    // route string to code
-  var abbrs = {};   // code to route string
+  var routeMap     = {};
+  var dict         = {};    // route string to code
+  var abbrs        = {};   // code to route string
   var serverProtos = {};
   var clientProtos = {};
   var protoVersion = 0;
 
-  var heartbeatInterval = 0;
-  var heartbeatTimeout = 0;
+  var heartbeatInterval    = 0;
+  var heartbeatTimeout     = 0;
   var nextHeartbeatTimeout = 0;
-  var gapThreshold = 100;   // heartbeat gap threashold
-  var heartbeatId = null;
-  var heartbeatTimeoutId = null;
-  var handshakeCallback = null;
+  var gapThreshold         = 100;   // heartbeat gap threashold
+  var heartbeatId          = null;
+  var heartbeatTimeoutId   = null;
+  var handshakeCallback    = null;
 
   var decode = null;
   var encode = null;
 
-  var reconnect = false;
-  var reconncetTimer = null;
-  var reconnectUrl = null;
+  var reconnect         = false;
+  var reconncetTimer    = null;
+  var reconnectUrl      = null;
   var reconnectAttempts = 0;
   var reconnectionDelay = 5000;
-  var DEFAULT_MAX_RECONNECT_ATTEMPTS = 10;
+  var MAX_RECONNECT_ATTEMPTS = 10;
 
   var useCrypto;
 
@@ -1246,6 +1248,7 @@ cc.Pomelo = function() {
       handshakeBuffer.sys.rsa = data;
     }
     handshakeCallback = params.handshakeCallback;
+
     connect(params, url, cb);
   };
 
@@ -1287,12 +1290,15 @@ cc.Pomelo = function() {
     return Message.encode(reqId, type, compressRoute, route, msg);
   };
 
+  //cb:回调函数, 参数有可能为 'timeout' 表示连接超时, 外部需要调用 pomelo.disconnect(callback), 
+  //等上次的disconnect后再初始化
   var connect = function(params, url, cb) {
     console.log('connect to ' + url);
 
     var params = params || {};
-    var maxReconnectAttempts = params.maxReconnectAttempts || DEFAULT_MAX_RECONNECT_ATTEMPTS;
+    var maxReconnectAttempts = params.maxReconnectAttempts || MAX_RECONNECT_ATTEMPTS;
     reconnectUrl = url;
+
     //Add protobuf version
     if(window.localStorage && window.localStorage.getItem('protos') && protoVersion === 0) {
       var protos = JSON.parse(window.localStorage.getItem('protos'));
@@ -1309,6 +1315,7 @@ cc.Pomelo = function() {
         decodeIO_decoder = decodeIO_protobuf.loadJson(serverProtos);
       }
     }
+
     //Set protoversion
     handshakeBuffer.sys.protoVersion = protoVersion;
 
@@ -1320,7 +1327,7 @@ cc.Pomelo = function() {
       var obj = Package.encode(Package.TYPE_HANDSHAKE, Protocol.strencode(JSON.stringify(handshakeBuffer)));
       send(obj);
     };
-    
+
     var onmessage = function(event) {
       processPackage(Package.decode(event.data), cb);
       // new package arrived, update the heartbeat timeout
@@ -1335,7 +1342,8 @@ cc.Pomelo = function() {
     };
 
     var onclose = function(event) {
-      pomelo.emit('close',event);
+      console.log(event)
+      pomelo.emit('close', event);
       pomelo.emit('disconnect', event);
       console.error('socket close: ', event);
       if(!!params.reconnect && reconnectAttempts < maxReconnectAttempts) {
@@ -1351,22 +1359,16 @@ cc.Pomelo = function() {
       disconnectCb = null;
     };
 
-    socket = new WebSocket(url);
+    socket = new WebSocket(url); //创建 socket 并连接 url 
     socket.binaryType = 'arraybuffer';
-    socket.onopen = onopen;
-    socket.onmessage = onmessage;
-    socket.onerror = onerror;
-    socket.onclose = onclose;
+    socket.onopen     = onopen;
+    socket.onmessage  = onmessage;
+    socket.onerror    = onerror;
+    socket.onclose    = onclose;
   };
 
   pomelo.disconnect = function(cb) {
     disconnectCb = cb;
-    if(socket) {
-      if(socket.disconnect) socket.disconnect();
-      if(socket.close) socket.close();
-      console.log('disconnect');
-      socket = null;
-    }
 
     if(heartbeatId) {
       clearTimeout(heartbeatId);
@@ -1376,20 +1378,33 @@ cc.Pomelo = function() {
       clearTimeout(heartbeatTimeoutId);
       heartbeatTimeoutId = null;
     }
+
+    if(socket) {
+      if(socket.disconnect) socket.disconnect();
+      if(socket.close) socket.close();
+      console.log('disconnect');
+      socket = null;
+    }
+    else { //by hlb
+      disconnectCb && disconnectCb();
+      disconnectCb = null;      
+    }
   };
 
   var reset = function() {
-    reconnect = false;
-    reconnectionDelay = 1000 * 5;
+    reconnect         = false;
+    reconnectionDelay = 5000;
     reconnectAttempts = 0;
     clearTimeout(reconncetTimer);
   };
 
+  //请求数据,支持2个参数
   pomelo.request = function(route, msg, cb) {
     if(arguments.length === 2 && typeof msg === 'function') {
       cb = msg;
       msg = {};
-    } else {
+    } 
+    else {
       msg = msg || {};
     }
     route = route || msg.route;
@@ -1427,7 +1442,7 @@ cc.Pomelo = function() {
 
   var send = function(packet) {
     if (socket !== null) {
-        socket.send(packet.buffer);
+      socket.send(packet.buffer);
     }
   };
 
@@ -1449,6 +1464,7 @@ cc.Pomelo = function() {
       // already in a heartbeat interval
       return;
     }
+
     heartbeatId = setTimeout(function() {
       heartbeatId = null;
       send(obj);
@@ -1462,7 +1478,8 @@ cc.Pomelo = function() {
     var gap = nextHeartbeatTimeout - Date.now();
     if(gap > gapThreshold) {
       heartbeatTimeoutId = setTimeout(heartbeatTimeoutCb, gap);
-    } else {
+    } 
+    else {
       console.error('server heartbeat timeout');
       pomelo.emit('heartbeat timeout');
       pomelo.disconnect();
@@ -1498,6 +1515,7 @@ cc.Pomelo = function() {
     processMessage(pomelo, msg);
   };
 
+  //踢下线 
   var onKick = function(data) {
     data = JSON.parse(Protocol.strdecode(data));
     pomelo.emit('onKick', data);

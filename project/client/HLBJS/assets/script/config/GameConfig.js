@@ -20,5 +20,6 @@ module.exports.init = function(gt){
     //游客登陆
     gt.open_guest = true;
     
-    gt.designSize = cc.size(1334, 750); 
+    gt.designSize = cc.size(1334, 750);
+    gt.center     = cc.v2(gt.designSize.width/2, gt.designSize.height/2);
 };

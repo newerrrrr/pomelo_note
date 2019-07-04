@@ -21,9 +21,20 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        require('InitGame'); //初始化游戏配置
+        //过渡效果
+        this.node.opacity = 0;
+        this.node.runAction(cc.fadeIn(0.7));
 
-        gt.autoAdaptDevices();
+        require('InitGame');
+        gt.autoAdaptDevices(); 
+
+        // cc.loader.loadRes('prefab/NoticeTips', function(err, prefab) {
+
+        //    var newNode = cc.instantiate(prefab);
+        //     cc.director.getScene().addChild(newNode);            
+        // });        
+        // this.node.addComponent('NoticeTips');
+        require('views/msgbox/NoticeTips').show("dfdfdfd", null, null, true, {imgOkPath:'resources/texture/common/btn_blue.png'});
     },
 
     start () {
@@ -38,11 +49,13 @@ cc.Class({
 
     onBtnLoginTel:function(){
         cc.log("===== onBtnLoginTel");
-        // let obj = {a:'kkdd', b:'isdf'};
+        gt.tcp.connect({
+            host : gt.gateServer.ip,
+            port : gt.gateServer.port,
+        }, function(result) {
+            cc.log('---------connect result:', result);
+        });
 
-        gt.captureScreen('hlb.png', this, null, null, false);
-
-        
     },
 
     onBtnLoginGuest:function(){
@@ -53,12 +66,20 @@ cc.Class({
         pomelo.init({
             host : gt.gateServer.ip,
             port : gt.gateServer.port,
-        }, function () {
+        }, function (code) {
+            if (code == 'timeout') {
+                cc.log('-------connect timeout !')
+                pomelo.disconnect(function() {
+                    cc.log("============ disconnect success")
+                })
+                return;
+            }
             var route = 'gate.gateHandler.queryEntry';
             pomelo.request(route, {
                 username:"huanglibo",
                 uid:1234,
             }, function (data) {
+
                 console.log("data======================", data.host, data.port);
                 if ('undefined' != data || null != data) {
                     pomelo.disconnect(function () {
