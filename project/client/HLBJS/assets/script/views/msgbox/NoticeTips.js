@@ -16,8 +16,7 @@ var NoticeTips = {
             cc.director.getScene().addChild(node);
 
             //初始化
-            var imgBg     = node.getChildByName("Img_bg"); 
-            var lbDesc    = imgBg.getChildByName("Label_Tips"); 
+            var imgBg     = node.getChildByName("Img_bg");             
             var nodeBot   = imgBg.getChildByName("node_bot") 
             var btnOk     = nodeBot.getChildByName("Btn_ok"); 
             var btnCancel = nodeBot.getChildByName("Btn_cancel"); 
@@ -37,26 +36,43 @@ var NoticeTips = {
                 btnOk.x = 0;
             };
 
-            //更换按钮资源
+            //更换按钮图片、文字
             if (btnParas) {                
                 if (btnParas.imgOkPath){
-                    var sp = btnOk.getComponent(cc.Sprite);
-                    sp.spriteFrame = new cc.SpriteFrame(cc.url.raw(btnParas.imgOkPath));
+                    let sp = btnOk.getComponent(cc.Sprite);
+                    cc.loader.loadRes(btnParas.imgOkPath, cc.SpriteFrame, function(err, spriteFrame) {
+                        sp.spriteFrame = spriteFrame;
+                    });
                 };
                 if (btnParas.imgCancelPath){
-                    var sp = btnCancel.getComponent(cc.Sprite);
-                    sp.spriteFrame = new cc.SpriteFrame(cc.url.raw(btnParas.imgCancelPath));
+                    let sp = btnCancel.getComponent(cc.Sprite);
+                    cc.loader.loadRes(btnParas.imgCancelPath, cc.SpriteFrame, function(err, spriteFrame) {
+                        sp.spriteFrame = spriteFrame;
+                    });
                 };
                 if (btnParas.strOk) {
-
+                    btnOk.getChildByName('Label').getComponent(cc.Label).string = btnParas.strOk;
                 };
                 if (btnParas.strCancel) {
-
+                    btnCancel.getChildByName('Label').getComponent(cc.Label).string = btnParas.strCancel;
                 };                
             };
 
             //自适应高度 
-
+            var lbDesc = imgBg.getChildByName("Label_Tips").getComponent(cc.Label); 
+            lbDesc.string = 'dkdd哒哒\n哒哒哒哒\n多多多\n多多多多\n多多\n多多多多\n多方法';
+            lbDesc.scheduleOnce(function(){ //需要等下一帧才更新
+                cc.log('-----------w,h', lbDesc.node.getContentSize().height)
+                let deltaH = lbDesc.node.getContentSize().height - 200;
+                if (deltaH > 0) {
+                    cc.log('dssssssssssssss', imgBg.height, deltaH)
+                    imgBg.height += deltaH;
+                    cc.log('dd', imgBg.height)
+                    // size.height += deltaH;
+                    // imgBg.getComponent(cc.Sprite).setContentSize(size);
+                }
+            }, 0);
+            
         }); 
 
 

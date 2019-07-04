@@ -710,7 +710,7 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 0,
+    "_level": 5,
     "_components": [
       {
         "__id__": 18
@@ -739,7 +739,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 2.2737367544323206e-13,
       "y": 0,
       "z": 0
     },
@@ -799,7 +799,7 @@
     "asset": {
       "__uuid__": "7ba925cf-f2a4-472d-882b-a2a8f707d546"
     },
-    "fileId": "5b5bmEp8hFWY7d28MAEI+l",
+    "fileId": "f1RZa91xBCg4GKzXY0IVDU",
     "sync": false
   },
   {

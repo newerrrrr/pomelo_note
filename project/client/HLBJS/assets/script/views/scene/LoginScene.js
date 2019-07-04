@@ -34,10 +34,15 @@ cc.Class({
         //     cc.director.getScene().addChild(newNode);            
         // });        
         // this.node.addComponent('NoticeTips');
-        require('views/msgbox/NoticeTips').show("dfdfdfd", null, null, true, {imgOkPath:'resources/texture/common/btn_blue.png'});
+
     },
 
     start () {
+        require('views/msgbox/NoticeTips').show("dfdfdfd", 
+            null, null, true, {
+            imgOkPath:"texture/common/btn_blue",
+            strOk:'dfdf'
+        });       
     },
 
 
@@ -98,4 +103,6 @@ cc.Class({
             })  
         });
     },
+
+
 });
