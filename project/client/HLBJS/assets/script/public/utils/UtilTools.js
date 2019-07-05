@@ -668,6 +668,7 @@ gt.isEmptyObject = function(obj) {
 }
 
 // 按钮点击事件
+//callback:允许该参数传入的时候已绑定上下文 
 gt.addClickEvent = function(btn, callback, context, noSound) {
     if(btn == null) {
         return null;
@@ -677,8 +678,7 @@ gt.addClickEvent = function(btn, callback, context, noSound) {
         if (!noSound) {
             //todo 
         }
-        callback && callback();
-
+        callback && callback.call(context);
     }, context);
 }
 

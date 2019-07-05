@@ -42,7 +42,23 @@ cc.Class({
             null, null, true, {
             imgOkPath:"texture/common/btn_blue",
             strOk:'dfdf'
-        });       
+        }); 
+        
+
+        // cc.loader.loadRes('prefab/NoticeTips', function(err, prefab) {
+        //     var newNode = cc.instantiate(prefab);
+        //     newNode.position = gt.center;
+        //     cc.director.getScene().addChild(newNode);
+
+        //     newNode.getComponent('NoticeTips').show('大幅度\n反对\n法大幅度打\n发打发打\n发打\n发\n打发打发打发大幅度反对法大幅度反对法', function(){
+        //         cc.log('---------ok')
+        //     }, null, true, {
+        //         imgOkPath:"texture/common/btn_blue",
+        //         strOk:'dfdssssf'
+        //     }); 
+        
+        // });
+
     },
 
 
