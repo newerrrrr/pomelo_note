@@ -27,22 +27,47 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        _loadTimerId:null,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        require('InitGame');
-
-        //延时1秒进入登陆界面
-        this.scheduleOnce(function(){
-            cc.director.loadScene('LoginScene'); 
-        }, 0.5);
+        //过渡效果
+        // this.node.opacity = 0;
+        // this.node.runAction(cc.fadeIn(0.5)); 
     },
 
     start () {
+        require('InitGame');
 
+        var count = 0;
+
+        count += 1;
+        cc.loader.loadResDir('texture/common', function(){
+            count -= 1;
+            if (count <= 0) this.showLogin();
+        }.bind(this));
+
+        count += 1;
+        cc.loader.loadRes('prefab/NoticeTips', function(err, prefab) {
+            count -= 1;
+            if (count <= 0) this.showLogin();
+        }.bind(this));
+
+        //超时则暂定加载并进入登录界面
+        // this._loadTimerId = setTimeout(this.showLogin.bind(this), 6000);
     },
 
     // update (dt) {},
+
+    showLogin:function(){ 
+        // if (this._loadTimerId) {
+        //     clearTimeout(this._loadTimerId);
+        //     this._loadTimerId = null;
+        // }
+        this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.fadeOut(0.5), cc.callFunc(function(){
+            cc.director.loadScene('LoginScene'); 
+        })));  
+    }
 });

@@ -37,7 +37,7 @@ cc.Class({
 
     },
 
-    start () {
+    start () { 
         require('views/msgbox/NoticeTips').show("dfdfdfd", 
             null, null, true, {
             imgOkPath:"texture/common/btn_blue",
@@ -55,9 +55,9 @@ cc.Class({
         //     }, null, true, {
         //         imgOkPath:"texture/common/btn_blue",
         //         strOk:'dfdssssf'
-        //     }); 
-        
+        //     });         
         // });
+
 
     },
 

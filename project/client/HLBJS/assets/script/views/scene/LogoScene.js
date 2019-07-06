@@ -64,7 +64,7 @@ cc.Class({
         //进入自动更新界面
         
         this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.fadeOut(0.8), cc.callFunc(function(){
-            cc.director.loadScene('LoginScene'); 
+            cc.director.loadScene('LoadingScene'); 
         })));
     }, 
 

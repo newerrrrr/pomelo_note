@@ -9,17 +9,15 @@
     require('config/MsgConfig').init(gt);
     require('public/utils/UtilTools').init(gt);
     require('public/utils/Debug').init(gt);
-
+    
     gt.deviceApi = require('public/utils/DeviceApi'); 
     gt.wxMgr     = require('public/utils/WxMgr'); 
     gt.tcp       = require('public/net/NetTcp');
     
+    
 
 
 
-
-
-    //等待框 
 
 
 })();

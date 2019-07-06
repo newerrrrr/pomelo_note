@@ -46,15 +46,19 @@ var NoticeTips = {
             //更换按钮图片、文字
             if (btnPara) {                
                 if (btnPara.imgOkPath){
+                    btnOk.active = false; //由于加载是异步,会导致按钮图片闪现. 所以等加载完再显示.
                     let sp = btnOk.getComponent(cc.Sprite);
                     cc.loader.loadRes(btnPara.imgOkPath, cc.SpriteFrame, function(err, spriteFrame) {
                         sp.spriteFrame = spriteFrame;
+                        btnOk.active = true; 
                     });
                 };
                 if (btnPara.imgCancelPath){
+                    btnCancel.active = false;
                     let sp = btnCancel.getComponent(cc.Sprite);
                     cc.loader.loadRes(btnPara.imgCancelPath, cc.SpriteFrame, function(err, spriteFrame) {
                         sp.spriteFrame = spriteFrame;
+                        btnCancel.active = true; 
                     });
                 };
                 if (btnPara.strOk) {

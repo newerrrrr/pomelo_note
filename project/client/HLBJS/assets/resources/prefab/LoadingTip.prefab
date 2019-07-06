@@ -520,7 +520,7 @@
         "__uuid__": "386d1dcc-cb5a-4ee1-9256-3b66d27fa8fd"
       }
     ],
-    "playOnLoad": false,
+    "playOnLoad": true,
     "_id": ""
   },
   {
