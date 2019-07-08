@@ -82,7 +82,7 @@ WxMgr.getWXToken = function(){
 //保存微信token
 WxMgr.saveWXToken = function(token){
     if(token){
-        gt.saveLocal('wxToken', token);
+        gt.setLocal('wxToken', token);
     }
 }
 

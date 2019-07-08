@@ -11,4 +11,3 @@ DeviceApi.getDeviceId = function(){
 };
 
 module.exports = DeviceApi;
-

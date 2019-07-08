@@ -79,10 +79,10 @@ gt.removePersistNode = function(node) {
 /*
 ** 保存String数据到本地
 */
-gt.saveLocal = function(key, str) {
+gt.setLocal = function(key, str) {
     key += '';
     str += '';
-    cc.sys.localStorage.setItem(gt.encodeString(key), gt.encodeString(str));
+    cc.sys.localStorage.setItem(key, gt.encodeString(str));
 }
 
 /*
@@ -90,7 +90,7 @@ gt.saveLocal = function(key, str) {
 */
 gt.getLocal = function(key, defaultStr) {
     key += '';
-    var str = cc.sys.localStorage.getItem(gt.decodeString(key));
+    var str = cc.sys.localStorage.getItem(key);
     if (str) str = gt.decodeString(str);
     if (!str || str.length <= 0) {
         str = defaultStr
@@ -681,6 +681,18 @@ gt.addClickEvent = function(btn, callback, context, noSound) {
         callback && callback.call(context);
     }, context);
 }
+
+// Loading框 
+let LoadingTips = require('views/common/LoadingTips');
+gt.showLoadingTips = LoadingTips.showLoadingTips;
+gt.removeLoadingTips = LoadingTips.removeLoadingTips;
+
+//事件
+let EventMgr = require('public/utils/EventMgr');
+gt.addEventHandler             = EventMgr.addEventHandler;
+gt.removeEventHandler          = EventMgr.removeEventHandler;
+gt.removeAllTargetEventHandler = EventMgr.removeAllTargetEventHandler;
+gt.dispatchEvent               = EventMgr.dispatchEvent;
 
 
 

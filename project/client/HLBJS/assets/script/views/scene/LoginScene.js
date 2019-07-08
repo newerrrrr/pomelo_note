@@ -8,6 +8,8 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
+var volume = 0;
+
 cc.Class({
     extends: cc.Component,
 
@@ -35,29 +37,26 @@ cc.Class({
         // });        
         // this.node.addComponent('NoticeTips');
 
+        var testFunc = function(arg1, arg2) {
+            cc.log('------arg1, arg2', arg1, arg2) 
+        }
+        gt.addEventHandler('HLBTEST', this, testFunc.bind(this)) 
+        gt.addEventHandler('HLBTEST2', this, testFunc.bind(this))   
     },
 
     start () { 
-        require('views/msgbox/NoticeTips').show("dfdfdfd", 
-            null, null, true, {
-            imgOkPath:"texture/common/btn_blue",
-            strOk:'dfdf'
-        }); 
+        // require('views/msgbox/NoticeTips').show("dfdfdfd", 
+        //     null, null, true, {
+        //     imgOkPath:"texture/common/btn_blue",
+        //     strOk:'dfdf'
+        // }); 
         
+        // gt.removeAllTargetEventHandler(this)
+        // gt.showLoadingTips("dfdfdfd", 5000, 3000);  
+        gt.dispatchEvent('HLBTEST', 111, 222) 
+        gt.dispatchEvent('HLBTEST2', 111, 222) 
 
-        // cc.loader.loadRes('prefab/NoticeTips', function(err, prefab) {
-        //     var newNode = cc.instantiate(prefab);
-        //     newNode.position = gt.center;
-        //     cc.director.getScene().addChild(newNode);
-
-        //     newNode.getComponent('NoticeTips').show('大幅度\n反对\n法大幅度打\n发打发打\n发打\n发\n打发打发打发大幅度反对法大幅度反对法', function(){
-        //         cc.log('---------ok')
-        //     }, null, true, {
-        //         imgOkPath:"texture/common/btn_blue",
-        //         strOk:'dfdssssf'
-        //     });         
-        // });
-
+        gt.audio.playMusic('common/bgm', true)
 
     },
 
@@ -66,6 +65,8 @@ cc.Class({
 
     onBtnLoginWX:function(){
         cc.log("===== onBtnLoginWX");
+
+
     },
 
     onBtnLoginTel:function(){

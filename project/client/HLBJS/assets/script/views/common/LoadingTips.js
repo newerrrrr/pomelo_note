@@ -1,11 +1,12 @@
 // loading等待框
 
+
 //timeout:超时自动销毁
 //delay:UI延迟显示, 要求 delay < timeout 
-module.exports.init = function(gt){ 
-    var timeoutId = null,
+var LoadingTips = { 
+    timeoutId:null,
 
-    gt.showLoadingTips = function(tipsText, timeout, delay) { 
+    showLoadingTips: function(tipsText, timeout, delay) { 
         if (cc.director.getScene().getChildByName('LoadingTips')) {
             cc.log('-----already exist LoadingTips');
             return 
@@ -25,29 +26,29 @@ module.exports.init = function(gt){
             };
 
             if (timeout) {
-                timeoutId = setTimeout(function(){
-                    gt.removeLoadingTips();
+                this.timeoutId = setTimeout(function(){
+                    this.removeLoadingTips();
                 }.bind(this), timeout);
             };
 
             if (delay) {
                 node.active = false;
-                setTimeout(function() {
-                    node.active = true;   
-                }, delay)
+                setTimeout(function() { node.active = true;}, delay); 
             }
-        } 
-    }
+        }.bind(this)); 
+    },
 
-    gt.removeLoadingTips = function() {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-            timeoutId = null; 
+    removeLoadingTips: function() {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = null; 
         }
 
         let node = cc.director.getScene().getChildByName('LoadingTips');
         if (node) {
             node.destroy();
         }
-    }
-}
+    } 
+};
+
+module.exports = LoadingTips 
