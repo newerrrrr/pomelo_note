@@ -427,12 +427,7 @@ gt.btnClickEvent = function(btn, func, obj, sound) {
     }
     btn.on("click", func, obj);
     btn.on("touchstart", function() {
-        if(sound == null){
-            cc.vv.AudioManager.playEff("common/","btn_click",true);
-        }
-        else if(sound.length > 0 ){
-            // Global.playEff(sound);
-        }
+        gt.audio.playEffect(sound || "common/btn_click", false);
     });
     return btn;
 }

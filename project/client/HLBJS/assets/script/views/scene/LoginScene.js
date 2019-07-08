@@ -56,7 +56,7 @@ cc.Class({
         gt.dispatchEvent('HLBTEST', 111, 222) 
         gt.dispatchEvent('HLBTEST2', 111, 222) 
 
-        gt.audio.playMusic('common/bgm', true)
+        // gt.audio.playMusic('common/bgm', true)
 
     },
 
@@ -65,7 +65,7 @@ cc.Class({
 
     onBtnLoginWX:function(){
         cc.log("===== onBtnLoginWX");
-
+        gt.audio.playEffect("common/btn_click", false);
 
     },
 

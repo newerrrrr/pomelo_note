@@ -19,11 +19,11 @@ AudioMgr.playMusic = function(filename, isLoop) {
     let filepath = 'sound/' + filename;
     cc.loader.loadRes(filepath, cc.AudioClip, function(err, clip) {
         if (err) {
-            cc.log('xxx invalid audo file:', filename);
+            cc.log('xxx invalid audio file:', filename);
             return 
         }
         bgmAudioId = cc.audioEngine.playMusic(clip, isLoop, bgmVolume);
-    });
+    }.bind(this) );
 } 
 
 AudioMgr.stopMusic = function() { 
@@ -31,6 +31,18 @@ AudioMgr.stopMusic = function() {
         cc.audioEngine.stopMusic(bgmAudioId);
         bgmAudioId = null;
     }
+}
+
+AudioMgr.pauseMusic = function() {
+    if (bgmAudioId != null) {
+        cc.audioEngine.pauseMusic();
+    }    
+}
+
+AudioMgr.resumeMusic = function() {
+    if (bgmAudioId != null) {
+        cc.audioEngine.resumeMusic();
+    }      
 }
 
 AudioMgr.setMusicVolume = function(volume) { 
@@ -43,8 +55,56 @@ AudioMgr.setMusicVolume = function(volume) {
     }
 }
 
+AudioMgr.getMusicVolume = function() {
+    return bgmVolume;
+}
 
 
 
+AudioMgr.playEffect = function(filename, isLoop) {
+    let filepath = 'sound/' + filename;
+    cc.loader.loadRes(filepath, cc.AudioClip, function(err, clip) {
+        if (err) {
+            cc.log('### invalid audio file:', filename);
+            return 
+        }
+        if (effVolume > 0) {
+            cc.audioEngine.playEffect(clip, isLoop, effVolume);
+        }
+    }.bind(this) );
+}
+
+AudioMgr.pauseAllEffects = function() {
+    cc.audioEngine.pauseAllEffects();
+}
+
+AudioMgr.resumeAllEffects = function() {
+    cc.audioEngine.resumeAllEffects();
+}
+
+AudioMgr.stopAllEffects = function() {
+    cc.audioEngine.stopAllEffects() 
+}
+
+AudioMgr.setEffectVolume = function(volume) {
+    if (effVolume != volume) {
+        effVolume = volume;
+        gt.setLocal('effVolume', volume);
+    } 
+}
+
+AudioMgr.getEffectVolume = function() {
+    return effVolume;
+}
+
+AudioMgr.pauseAll = function() {
+    this.pauseMusic();
+    this.pauseAllEffects();
+}
+
+AudioMgr.resumeAll = function() {
+    this.resumeMusic();
+    this.resumeAllEffects();
+}
 
 module.exports = AudioMgr; 
