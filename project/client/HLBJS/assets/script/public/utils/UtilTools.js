@@ -682,12 +682,12 @@ let LoadingTips = require('views/common/LoadingTips');
 gt.showLoadingTips = LoadingTips.showLoadingTips;
 gt.removeLoadingTips = LoadingTips.removeLoadingTips;
 
-//事件
+//事件管理
 let EventMgr = require('public/utils/EventMgr');
-gt.addEventHandler             = EventMgr.addEventHandler;
-gt.removeEventHandler          = EventMgr.removeEventHandler;
-gt.removeAllTargetEventHandler = EventMgr.removeAllTargetEventHandler;
-gt.dispatchEvent               = EventMgr.dispatchEvent;
+gt.addEventHandler       = EventMgr.addEventHandler;
+gt.removeEventHandler    = EventMgr.removeEventHandler;
+gt.removeAllEventHandler = EventMgr.removeAllEventHandler;
+gt.dispatchEvent         = EventMgr.dispatchEvent;
 
 
 

@@ -30,7 +30,7 @@ EventMgr.removeEventHandler = function(event, target) {
     } 
 } 
 
-EventMgr.removeAllTargetEventHandler = function(target) {
+EventMgr.removeAllEventHandler = function(target) {
     callbacks = callbacks || {}; 
     
     for (var event in callbacks) {

@@ -107,4 +107,6 @@ AudioMgr.resumeAll = function() {
     this.resumeAllEffects();
 }
 
+AudioMgr.init();
+
 module.exports = AudioMgr; 

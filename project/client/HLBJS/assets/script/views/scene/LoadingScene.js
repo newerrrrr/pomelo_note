@@ -40,9 +40,7 @@ cc.Class({
 
     start () {
         require('InitGame');
-
-        gt.audio.init();
-
+        
         //加载资源 
         var count = 0;
 

@@ -51,13 +51,12 @@ cc.Class({
         //     strOk:'dfdf'
         // }); 
         
-        // gt.removeAllTargetEventHandler(this)
+        // gt.removeAllEventHandler(this)
         // gt.showLoadingTips("dfdfdfd", 5000, 3000);  
-        gt.dispatchEvent('HLBTEST', 111, 222) 
-        gt.dispatchEvent('HLBTEST2', 111, 222) 
+        // gt.dispatchEvent('HLBTEST', 111, 222) 
+        // gt.dispatchEvent('HLBTEST2', 111, 222) 
 
         // gt.audio.playMusic('common/bgm', true)
-
     },
 
 
@@ -80,11 +79,7 @@ cc.Class({
 
     },
 
-    onBtnLoginGuest:function(){
-        cc.log("===== onBtnLoginGuest, name =", this.editbox.string);
-        cc.log("=============gameid, zzmj=", gt.GameID.ZZMJ, gt.EventType.ZZMJ, gt.MSGID.LOGIN);
-        cc.log("=================gate:", gt.gateServer.ip, gt.gateServer.port);
-
+    onBtnLoginGuest:function(){ 
         pomelo.init({
             host : gt.gateServer.ip,
             port : gt.gateServer.port,
