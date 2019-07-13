@@ -13,7 +13,12 @@
   ],
   "design-resolution-height": 750,
   "design-resolution-width": 1334,
-  "excluded-modules": [],
+  "excluded-modules": [
+    "TiledMap",
+    "VideoPlayer",
+    "Collider",
+    "Physics"
+  ],
   "fit-height": true,
   "fit-width": true,
   "group-list": [

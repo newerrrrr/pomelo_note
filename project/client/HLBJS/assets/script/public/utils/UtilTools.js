@@ -350,43 +350,50 @@ gt.convertNumToShort = function(num, radix, decimal, costomunitArr) {
     return num*sign + unitArr[sum]; 
 }
 
+//截屏 node:需要截屏的节点
+gt.captureScreen = function(node, callback) {
+    let width = Math.floor(node.width);
+    let height = Math.floor(node.height);
 
-//截屏(此功能不可行, RenderTexture部分函数废弃。请参考creator官方测试例子 assets\cases\07_capture_texture)
-//fileName: **.png
-//node: 截屏的节点
-//endCall: 截屏完成的回调会传出目标文件路径
-//cpSize: 截屏大小：如果不是截全屏大小。
-//bHide:有些节点需要隐藏截图后，就只在截图瞬间显示
-gt.captureScreen = function(fileName, node, endCall, cpSize, bHide) { 
-    if(CC_JSB){
-        var doCapSize = cpSize || gt.designSize;
-        var oldPos = node.position;
-        
-        if(bHide){
-            node.active = true;
-        }
-        
-        var rt = new cc.RenderTexture(doCapSize.width, doCapSize.height);
-        // rt.setVisible(false);
-        node.position = cc.v2(doCapSize.width/2, doCapSize.height/2); //要加这句，不然会偏移坐标
-        rt.begin();
-        node.visit();
-        rt.end();
+    if (CC_JSB) {
+        let fileName = "hlbtest.jpg";
+        let fullPath = jsb.fileUtils.getWritablePath() + fileName;
+        if (jsb.fileUtils.isFileExist(fullPath)) {
+            jsb.fileUtils.removeFile(fullPath);
+        } 
+        let cameraNode = new cc.Node();
+        cameraNode.position = cc.v2(width*0.5, height*0.5);
+        cameraNode.parent = node.parent;
+        let camera = cameraNode.addComponent(cc.Camera);
+        camera.cullingMask = 0xffffffff;
+        let texture = new cc.RenderTexture();
+        let gl = cc.game._renderContext;
+        texture.initWithSize(width, height, gl.STENCIL_INDEX8);
+        camera.targetTexture = texture;
+        camera.render(node);
+        let data = texture.readPixels();
 
-        if(bHide){
-            node.active = false;
-        }
-        node.position = oldPos; 
-
-        rt.saveToFile(fileName, cc.ImageFormat.PNG, true, function(){            
-            if(endCall){ 
-                var targetPath = jsb.fileUtils.getWritablePath() + fileName; 
-                cc.log('============filepath:', targetPath);             
-                endCall(targetPath);
+        //以下代码将截图后默认倒置的图片回正
+        let picData = new Uint8Array(width * height * 4);
+        let rowBytes = width * 4;
+        for (let row = 0; row < height; row++) {
+            let srow = height - 1 - row;
+            let start = Math.floor(srow * width * 4);
+            let reStart = row * width * 4;
+            // save the piexls data
+            for (let i = 0; i < rowBytes; i++) {
+                picData[reStart + i] = data[start + i];
             }
-        });
-    }
-},
+        }
+        
+        //保存图片
+        jsb.saveImageData(picData, width, height, fullPath);
+        console.log("截图成功，图片保存在 ====>", fullPath);
+        node.parent.removeChild(camera);
+        if (callback) callback(fullPath);
+    } 
+} 
+
 
 //WX链接分享
 //linkUrl:点击跳转的url

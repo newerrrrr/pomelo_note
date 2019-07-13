@@ -9,7 +9,5 @@ module.exports.init = function(gt){
     gt.WALLET_INFO          = 1006 
 
     gt.REPLAY_BY_SHARE_CODE = 2003 //分享码回放 
-
-
 } 
 
