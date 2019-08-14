@@ -25,6 +25,22 @@ app.configure('production|development', 'connector', function(){
     });
 });
 
+//mysql db, by hlb
+app.configure('production|development', 'gate|connector|login', function(){
+  var redisClient = require("redis").createClient(6379, "127.0.0.1", {}); 
+  app.set('mysqlClient',redisClient);
+});
+
+//redis db, by hlb
+app.configure('production|development', 'gate|connector|login', function(){
+  var redisClient = require("redis").createClient(6379, "127.0.0.1", {}); 
+  app.set('redisClient',redisClient);
+});
+
+
+
+
+
 
 // start app
 app.start();

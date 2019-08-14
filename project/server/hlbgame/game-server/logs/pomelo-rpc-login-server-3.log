@@ -1,0 +1,11 @@
+[2019-08-13 21:01:26.067] [ERROR] pomelo-rpc - [31m[mqtt-acceptor] [39mprocess rpc message error TypeError: console is not a function
+    at Handler.handler.login (/usr/local/games/hlbgame/game-server/app/servers/login/handler/loginHandler.js:26:2)
+    at Service.handle (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/common/service/handlerService.js:59:20)
+    at handle (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/server/server.js:375:25)
+    at next (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/common/service/filterService.js:50:7)
+    at Service.beforeFilter (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/common/service/filterService.js:65:3)
+    at beforeFilter (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/server/server.js:242:8)
+    at doHandle (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/server/server.js:388:3)
+    at Server.pro.handle (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/server/server.js:125:3)
+    at Component.pro.handle (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/components/server.js:67:14)
+    at Remote.forwardMessage (/usr/local/games/hlbgame/game-server/node_modules/pomelo/lib/common/remote/backend/msgRemote.js:45:10)

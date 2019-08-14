@@ -1,9 +1,9 @@
 {
-    "name":"hlbgame",
-    "version":"0.0.1",
-    "private":false,
-    "dependencies":{
-        "pomelo":"2.2.5"
+    "name": "hlbgame",
+    "version": "0.0.1",
+    "private": false,
+    "dependencies": {
+        "pomelo": "2.2.5",
+        "redis": "^2.8.0"
     }
 }
-

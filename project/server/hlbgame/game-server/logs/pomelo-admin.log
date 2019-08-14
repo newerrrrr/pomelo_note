@@ -1,0 +1,292 @@
+[2019-06-25 04:23:04.285] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 04:23:04.344] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 04:23:05.845] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 04:23:06.157] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "gate-server-1" "gate" register master failed
+[2019-06-25 04:23:06.157] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:23:06.039] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:23:06.045] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:23:06.056] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:23:06.361] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-1" "login" register master failed
+[2019-06-25 04:23:06.362] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:23:07.160] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:23:07.215] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"3":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3555},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3553},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":4000,"frontend":"true","serverType":"gate"}}}}}
+[2019-06-25 04:23:07.306] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:3
+[2019-06-25 04:23:07.365] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:23:07.412] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"7":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3555},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3553},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":4000,"frontend":"true","serverType":"gate"},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":3200,"clientHost":"127.0.0.1","clientPort":4200,"frontend":"true","serverType":"login"}}}}}
+[2019-06-25 04:23:07.502] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:7
+[2019-06-25 04:50:08.086] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 04:50:08.142] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 04:50:09.726] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 04:50:09.787] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:50:10.042] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "gate-server-1" "gate" register master failed
+[2019-06-25 04:50:10.043] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:50:09.823] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:50:09.814] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:50:10.175] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-1" "login" register master failed
+[2019-06-25 04:50:10.175] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:50:11.047] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:50:11.097] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"3":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3620},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3618},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":4000,"frontend":"true","serverType":"gate"}}}}}
+[2019-06-25 04:50:11.178] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:50:11.193] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:3
+[2019-06-25 04:50:11.223] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"7":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3620},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3618},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":4000,"frontend":"true","serverType":"gate"},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":3200,"clientHost":"127.0.0.1","clientPort":4200,"frontend":"true","serverType":"login"}}}}}
+[2019-06-25 04:50:11.317] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:7
+[2019-06-25 04:52:17.814] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 04:52:17.858] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 04:52:19.152] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:52:19.173] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 04:52:19.449] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "gate-server-1" "gate" register master failed
+[2019-06-25 04:52:19.450] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-1" "login" register master failed
+[2019-06-25 04:52:19.451] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:52:19.449] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:52:19.267] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:52:19.286] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:52:20.451] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:52:20.453] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:52:20.499] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"3":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3689},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3687},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":3200,"clientHost":"127.0.0.1","clientPort":4200,"frontend":"true","serverType":"login"}}}}}
+[2019-06-25 04:52:20.503] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"7":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":3101,"clientHost":"127.0.0.1","clientPort":4101,"frontend":"true","serverType":"connector","pid":3689},"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":3100,"clientHost":"127.0.0.1","clientPort":4100,"frontend":"true","serverType":"connector","pid":3687},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":3200,"clientHost":"127.0.0.1","clientPort":4200,"frontend":"true","serverType":"login"},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":4000,"frontend":"true","serverType":"gate"}}}}}
+[2019-06-25 04:52:20.594] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:7
+[2019-06-25 04:52:20.602] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:3
+[2019-06-25 04:58:02.426] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 04:58:02.504] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 04:58:04.910] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:58:04.972] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:58:05.007] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 04:58:05.457] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-3" "login" register master failed
+[2019-06-25 04:58:05.458] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:58:05.517] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-1" "login" register master failed
+[2019-06-25 04:58:05.518] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:58:05.521] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "login-server-2" "login" register master failed
+[2019-06-25 04:58:05.521] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:58:05.310] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 04:58:05.352] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:58:05.405] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:58:05.439] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 04:58:05.820] [ERROR] pomelo-admin - [31m[MonitorAgent] [39mserver "gate-server-1" "gate" register master failed
+[2019-06-25 04:58:05.820] [ERROR] pomelo-admin - [31m[MqttClient] [39mmqtt socket is disconnect, remote server host: 127.0.0.1, port: 3005
+[2019-06-25 04:58:06.460] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:58:06.510] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"5":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":4050,"clientPort":3050,"frontend":"true","serverType":"connector","pid":3785},"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":4051,"clientPort":3051,"frontend":"true","serverType":"connector","pid":3787},"connector-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-3","host":"127.0.0.1","port":4052,"clientPort":3052,"frontend":"true","serverType":"connector","pid":3793},"login-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-3","host":"127.0.0.1","port":6052,"serverType":"login"}}}}}
+[2019-06-25 04:58:06.521] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:58:06.523] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:58:06.581] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"10":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":4050,"clientPort":3050,"frontend":"true","serverType":"connector","pid":3785},"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":4051,"clientPort":3051,"frontend":"true","serverType":"connector","pid":3787},"connector-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-3","host":"127.0.0.1","port":4052,"clientPort":3052,"frontend":"true","serverType":"connector","pid":3793},"login-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-3","host":"127.0.0.1","port":6052,"serverType":"login"},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":6050,"serverType":"login"}}}}}
+[2019-06-25 04:58:06.587] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"16":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":4050,"clientPort":3050,"frontend":"true","serverType":"connector","pid":3785},"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":4051,"clientPort":3051,"frontend":"true","serverType":"connector","pid":3787},"connector-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-3","host":"127.0.0.1","port":4052,"clientPort":3052,"frontend":"true","serverType":"connector","pid":3793},"login-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-3","host":"127.0.0.1","port":6052,"serverType":"login"},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":6050,"serverType":"login"},"login-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-2","host":"127.0.0.1","port":6051,"serverType":"login"}}}}}
+[2019-06-25 04:58:06.591] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:5
+[2019-06-25 04:58:06.669] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:16
+[2019-06-25 04:58:06.675] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:10
+[2019-06-25 04:58:06.823] [INFO] pomelo-admin - [32m[MqttClient] [39mreconnect delay 1 s
+[2019-06-25 04:58:06.866] [DEBUG] pomelo-admin - [36m[MasterSocket] [39mrepush qos message {"23":{"moduleId":"__monitorwatcher__","msg":{"action":"replaceServer","servers":{"connector-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":4050,"clientPort":3050,"frontend":"true","serverType":"connector","pid":3785},"connector-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":4051,"clientPort":3051,"frontend":"true","serverType":"connector","pid":3787},"connector-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"connector-server-3","host":"127.0.0.1","port":4052,"clientPort":3052,"frontend":"true","serverType":"connector","pid":3793},"login-server-3":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-3","host":"127.0.0.1","port":6052,"serverType":"login"},"login-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-1","host":"127.0.0.1","port":6050,"serverType":"login"},"login-server-2":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"login-server-2","host":"127.0.0.1","port":6051,"serverType":"login"},"gate-server-1":{"main":"/usr/local/games/hlbgame/game-server/app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":3014,"frontend":"true","serverType":"gate"}}}}}
+[2019-06-25 04:58:06.970] [WARN] pomelo-admin - [33m[MasterSocket] [39munknown resp id:23
+[2019-06-25 06:58:16.091] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 06:58:16.199] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 06:58:20.132] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 06:58:20.121] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 06:58:20.166] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 06:58:20.388] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 06:58:20.511] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 06:58:20.514] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 06:58:20.528] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 07:11:04.697] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-25 07:11:04.789] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-25 07:11:07.274] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-25 07:11:07.260] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 07:11:07.349] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 07:11:07.415] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 07:11:07.581] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-25 07:11:08.141] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-25 07:11:08.307] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:11:47.405] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-26 04:11:47.501] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-26 04:11:50.524] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:11:50.729] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:11:50.646] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-26 04:11:50.818] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:11:50.807] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:11:50.782] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:11:51.242] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:28:13.886] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-26 04:28:14.050] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-26 04:28:16.790] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:28:16.833] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:28:16.885] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:28:16.907] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-26 04:28:17.164] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:28:17.158] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:28:17.150] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:30:05.235] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-06-26 04:30:05.326] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-06-26 04:30:07.617] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:30:07.632] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:30:07.724] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-06-26 04:30:08.054] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:30:08.153] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-06-26 04:30:08.134] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-06-26 04:30:08.211] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-07-01 23:29:07.424] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-07-01 23:29:07.589] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-07-01 23:29:11.582] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-07-01 23:29:11.677] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-07-01 23:29:11.637] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-07-01 23:29:11.649] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-07-01 23:29:11.826] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-07-01 23:29:11.795] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-07-01 23:29:11.804] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 03:59:35.347] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 03:59:35.892] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:17:10.527] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 19:17:10.628] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:17:15.475] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:17:15.682] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:17:15.645] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 19:17:15.577] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:17:17.512] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:17:16.274] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:17:16.095] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:18:39.741] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 19:18:39.857] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:18:42.025] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:18:42.036] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:18:42.044] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 19:18:42.119] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:18:42.201] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:18:42.310] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:18:42.336] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:25:02.825] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 19:25:03.088] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:25:05.263] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:25:05.382] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 19:25:05.500] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:25:05.517] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:25:05.522] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:25:05.567] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:25:05.658] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:33:29.073] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 19:33:29.164] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:33:31.978] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:33:32.076] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:33:32.273] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:33:32.304] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:33:32.337] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 19:33:32.409] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:33:32.412] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:37:13.251] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 19:37:13.333] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 19:37:15.558] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:37:15.573] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:37:15.666] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 19:37:15.718] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 19:37:15.745] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:37:15.821] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 19:37:15.858] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:48:29.718] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 20:48:29.832] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 20:48:33.056] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:48:33.101] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:48:33.119] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:48:33.322] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:48:33.285] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 20:48:33.379] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:48:33.356] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:51:45.367] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-12 20:51:45.450] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-12 20:51:47.814] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:51:47.847] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:51:47.880] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-12 20:51:48.008] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-12 20:51:48.049] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:51:48.074] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-12 20:51:48.263] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:34:53.746] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 20:34:54.057] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 20:35:03.109] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:03.378] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 20:35:03.433] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:04.004] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:40.789] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 20:35:40.876] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 20:35:43.156] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:43.167] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:43.216] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:35:43.285] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 20:35:43.434] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:35:43.378] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:35:43.562] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:37:11.917] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 20:37:11.989] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 20:37:14.276] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:37:14.257] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:37:14.321] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:37:14.345] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 20:37:14.497] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:37:14.489] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:37:14.536] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:40:38.617] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 20:40:38.716] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 20:40:41.196] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:40:41.207] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:40:41.272] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:40:41.288] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 20:40:41.499] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:40:41.565] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:40:41.575] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:59:13.554] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 20:59:13.633] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 20:59:16.702] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:59:16.756] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:59:16.773] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 20:59:16.920] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 20:59:16.930] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:59:17.068] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 20:59:17.127] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:01:11.148] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:01:11.232] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:01:13.701] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:01:13.689] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:01:13.750] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:01:13.888] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:01:13.997] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:01:14.049] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:01:14.121] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:02:00.143] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:02:00.232] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:02:02.604] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:02:02.667] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:02:02.680] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:02:02.765] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:02:02.898] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:02:02.940] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:02:02.951] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:08:36.579] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:08:36.665] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:08:39.309] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:08:39.376] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:08:39.382] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:08:39.546] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:08:39.519] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:08:39.633] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:08:39.645] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:21.026] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:10:21.125] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:10:23.488] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:23.558] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:23.565] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:23.717] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:10:23.939] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:23.917] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:23.914] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:48.729] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:10:48.794] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:10:51.164] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:51.189] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:51.239] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:10:51.270] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:10:51.406] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:51.412] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:10:51.435] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:12:35.413] [INFO] pomelo-admin - [32m[MqttServer] [39m[MqttServer] listen on 3005
+[2019-08-13 21:12:35.509] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "master", "127.0.0.1", 3005
+[2019-08-13 21:12:37.882] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:12:37.926] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:12:38.017] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "login", "127.0.0.1", 3005
+[2019-08-13 21:12:38.016] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2019-08-13 21:12:38.149] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:12:38.182] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2019-08-13 21:12:38.235] [INFO] pomelo-admin - [32m[ConsoleService] [39mtry to connect master: "connector", "127.0.0.1", 3005
