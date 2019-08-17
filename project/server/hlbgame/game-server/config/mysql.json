@@ -1,0 +1,17 @@
+{
+  "development":{
+    "database" : "hlbdb",
+    "host" : "127.0.0.1",
+    "port" : 3306,
+    "user" : "root",
+    "password" : "11612380"
+  },
+
+  "production":{
+    "database" : "hlbdb",
+    "host" : "127.0.0.1",
+    "port" : 3306,
+    "user" : "root",
+    "password" : "11612380"
+  }
+}

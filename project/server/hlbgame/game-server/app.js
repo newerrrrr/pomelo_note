@@ -1,5 +1,5 @@
 var pomelo = require('pomelo');
-
+var path = require('path');
 /**
  * Init app for client.
  */
@@ -26,16 +26,21 @@ app.configure('production|development', 'connector', function(){
 });
 
 //mysql db, by hlb
+app.loadConfig('mysqlCfg', path.resolve('./config/mysql.json'));
 app.configure('production|development', 'gate|connector|login', function(){
-  var redisClient = require("redis").createClient(6379, "127.0.0.1", {}); 
-  app.set('mysqlClient',redisClient);
+  var config = app.get('mysqlCfg');
+  var mysql = require('mysql'); // npm install mysql
+  var connection = mysql.createConnection(config);
+  connection.connect();
+  app.set('mysqlClient', connection);
 });
 
 //redis db, by hlb
 app.configure('production|development', 'gate|connector|login', function(){
   var redisClient = require("redis").createClient(6379, "127.0.0.1", {}); 
-  app.set('redisClient',redisClient);
+  app.set('redisClient', redisClient);
 });
+
 
 
 

@@ -31,9 +31,52 @@ handler.login = function(msg, session, next) {
 	});
 	
 
-	var Player = require('../../../mode/Player');
-	var player = new Player(this.app);
-	player.getPlayerById(123456);
+	// var Player = require('../../../mode/Player');
+	// var player = new Player(this.app);
+	// player.getPlayerById(123456);
+
+	var timeUtil = require('../../../util/timeUtil');
+
+	// var mysql = require('mysql');
+	// console.log('================mysql:' + mysql);
+
+	// var config = {
+	// 	host     : 'localhost',
+	// 	user     : 'root',
+	// 	password : '11612380',
+	// 	port: '3306',                   
+	// 	database: 'hlbdb' 
+	// }
+	// var connection = mysql.createConnection(config);
+ //  	connection.connect();
+ 	var config = this.app.get('mysqlCfg');
+ 	console.log('-----------config: ' + config);
+ 	console.log('--------------time:' + new Date())
+ 	var connection = this.app.get('mysqlClient');
+
+  	var sql = 'INSERT INTO Player(nick, create_time) VALUES("刘5",\' '  + timeUtil.getDatetime() + '\')';
+  	connection.query(sql, ['菜鸟'], function(err, result) {
+	 	if(err){
+         console.log('[INSERT ERROR] - ', err.message);
+         return;
+        } 
+        console.log('INSERT ID:', result);
+  	})
+
+
+	// var sql = 'INSERT INTO Player(nick) VALUES(刘三)';
+	// var mysql = this.app.get('mysqlClient');
+	// console.log('=================== mysql' + mysql);
+
+	// mysql.query(sql, ['test'], function(err, result) { 
+	//  	if(err){
+	// 		console.log('[INSERT ERROR] - ',err.message);
+	// 		return;
+ //        }
+	// 	console.log('INSERT ID:', result);
+	// })
+
+
 
 
 	next(null, {
